@@ -11,7 +11,6 @@ export class CharactersComponent implements OnInit {
   characters: any[] = [];
   selectedCharacter: any;
 
-  // Obtén una referencia al modal utilizando ViewChild
   @ViewChild('characterDetailsModal') characterDetailsModal: any;
 
   constructor(private charactersService: CharactersService, private modalService: NgbModal) { }
@@ -33,7 +32,6 @@ export class CharactersComponent implements OnInit {
 
   openCharacterDetailsModal(character: any) {
     this.selectedCharacter = character;
-    // Abre el modal utilizando la referencia y configura las opciones
     this.modalService.open(this.characterDetailsModal, { centered: true });
   }
 }
