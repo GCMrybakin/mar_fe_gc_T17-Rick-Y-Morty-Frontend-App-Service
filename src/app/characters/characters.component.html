@@ -1,0 +1,32 @@
+<script src="https://cdn.jsdelivr.net/npm/@ng-bootstrap/ng-bootstrap@11.0.1/bundles/ng-bootstrap.js"></script>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4" *ngFor="let character of characters">
+            <div class="card mb-3">
+                <img class="card-img-top" [src]="character.image" alt="Imagen del personaje">
+                <div class="card-body">
+                    <h5 class="card-title">{{ character.name }}</h5>
+                    <button class="btn btn-primary" (click)="openCharacterDetailsModal(character)">Ver detalles</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Agrega el código del modal -->
+<ng-template #characterDetailsModal let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title">Detalles del personaje</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <p>Estado: {{ selectedCharacter.status }}</p>
+        <p>Especio: {{ selectedCharacter.species }}</p>
+        <p>Genero: {{ selectedCharacter.gender }}</p>
+        <p>Origen: {{ selectedCharacter.origin.name }}</p>
+        <p>Localizacion: {{ selectedCharacter.location.name }}</p>
+    </div>
+</ng-template>
