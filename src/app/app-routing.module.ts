@@ -16,7 +16,6 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: '**', redirectTo: '', pathMatch: 'full' } // Redirecciona a la página principal en caso de ruta no encontrada
 ];
 
 @NgModule({
